@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <generator uri="https://gohugo.io/" version="0.120.3">Hugo</generator>
+    <title>Illusionist&#39;s Web Log</title>
+            <link href="https://example.org/" rel="alternate" type="text/html" title="html" />
+            <link href="https://example.org/feed.xml" rel="self" type="application/atom+xml" title="Atom" />
+    <updated>2023-12-19T21:00:26+06:00</updated>
+    <id>https://example.org/</id>
+        <entry>
+            <title>Troubleshooting Android APP Repinning</title>
+            <link href="https://example.org/posts/troubleshooting-android-app-repinning/" rel="alternate" type="text/html"  hreflang="en" />
+            <id>https://example.org/posts/troubleshooting-android-app-repinning/</id>
+                    <author>
+                        <name>Delowar Hossain</name>
+                    </author>
+            <published>2020-02-12T09:07:13+06:00</published>
+            <updated>2020-02-12T09:07:13+06:00</updated>
+            <content type="html">
+                &lt;p&gt;As I was exploring &lt;em&gt;cert pinning&lt;/em&gt; for the first time, I went through steps and posted it in this [ &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;http://delowar.me/starting-with-android-app-testing/&#34;
+&gt;http://delowar.me/starting-with-android-app-testing/&lt;/a&gt; ] blog post.&lt;br&gt;
+But I had some issue with my target application.&lt;/p&gt;
+&lt;p&gt;Couldn’t install app from Google Play.&lt;br&gt;
+So, I tried &lt;code&gt;adb install target.apk&lt;/code&gt; and the app got installed. To get the apk, what I did was, extract the apk from my mobile [where app was installed] and then export it to my local machine.&lt;br&gt;
+But the problem was, when I tried to launch the app, it got me an error, telling me to properly &lt;em&gt;install the app from Google Play Store&lt;/em&gt; and I couldn’t install it as GPlay showed an error &lt;em&gt;App not compatible with your device&lt;/em&gt;.&lt;br&gt;
+I installed the App several times but failed to run it. Then, I come across a blog post [ &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://pentester.land/tips-n-tricks/2018/10/19/installing-arm-android-apps-on-genymotion-devices.html&#34;
+&gt;https://pentester.land/tips-n-tricks/2018/10/19/installing-arm-android-apps-on-genymotion-devices.html&lt;/a&gt; ] about &lt;em&gt;&lt;strong&gt;ARM Translation&lt;/strong&gt;&lt;/em&gt; and tried it but still couldn’t run the app.&lt;/p&gt;
+&lt;p&gt;I had no intention to root my phone. So, I started searching for alternative methods available for cert pinning and I came across [ &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://blog.it-securityguard.com/the-stony-path-of-android-%F0%9F%A4%96-bug-bounty-bypassing-certificate-pinning/&#34;
+&gt;https://blog.it-securityguard.com/the-stony-path-of-android-%F0%9F%A4%96-bug-bounty-bypassing-certificate-pinning/&lt;/a&gt; ] and I thought to grab apk from [ &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://apk-dl.com/&#34;
+&gt;https://apk-dl.com/&lt;/a&gt; ] as &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://twitter.com/itsecurityguard&#34;
+&gt;https://twitter.com/itsecurityguard&lt;/a&gt; post suggested.&lt;br&gt;
+Strangely I saw the apk size is around &lt;code&gt;33mb+&lt;/code&gt; but it was only &lt;code&gt;27mb++&lt;/code&gt; when I exported from my phone.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Let&amp;rsquo;s dig deep -_-&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I uninstalled the app from my phone and tried to reinstall it from &lt;strong&gt;phone generated apk&lt;/strong&gt; (ES File Explorer have this feature - to export apps as apk) and it did not even install. I tried several times but it failed every times.&lt;br&gt;
+Then I tried to install the apk from &lt;code&gt;apk-dl&lt;/code&gt; and it installed and ran without any issue.&lt;/p&gt;
+&lt;p&gt;Then, I thought about using this apk on my Genymotion and I did so. And surprisingly, it worked with charm. 2+ days debugging paid off.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;/blog-images/debugging-android-certificate-repinning.png&#34;
+  alt=&#34;frida-ps -Ua output&#34;
+  
+/&gt;&lt;/p&gt;
+
+            </content>  
+                                <category scheme="https://example.org/authors/illusionist3886" term="illusionist3886" label="illusionist3886" /> 
+        </entry>
+        <entry>
+            <title>Starting With Android App Testing</title>
+            <link href="https://example.org/posts/Starting-with-Android-App-Testing/" rel="alternate" type="text/html"  hreflang="en" />
+            <id>https://example.org/posts/Starting-with-Android-App-Testing/</id>
+                    <author>
+                        <name>Delowar Hossain</name>
+                    </author>
+            <published>2020-02-10T07:56:34+06:00</published>
+            <updated>2020-02-10T07:56:34+06:00</updated>
+            <content type="html">
+                &lt;p&gt;Installing adb: &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://www.xda-developers.com/install-adb-windows-macos-linux/&#34;
+&gt;https://www.xda-developers.com/install-adb-windows-macos-linux/&lt;/a&gt;&lt;br&gt;
+Genymotion: &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://www.genymotion.com/fun-zone/&#34;
+&gt;https://www.genymotion.com/fun-zone/&lt;/a&gt;&lt;br&gt;
+Genymotion Shell: &lt;code&gt;devices list&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;adb devices&lt;/code&gt; If there is no device, connect &lt;code&gt;adb connect ip:5555&lt;/code&gt;&lt;br&gt;
+Install python3 by downloading or from &lt;code&gt;Microsoft Store&lt;/code&gt; and then verify it via &lt;code&gt;python&lt;/code&gt; command.&lt;br&gt;
+Download and run &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://bootstrap.pypa.io/get-pip.py&#34;
+&gt;https://bootstrap.pypa.io/get-pip.py&lt;/a&gt;&lt;br&gt;
+Verify it via &lt;code&gt;pip3 -V&lt;/code&gt; command.&lt;br&gt;
+Now our machine is ready to install &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://frida.re/&#34;
+&gt;frida&lt;/a&gt;.&lt;br&gt;
+Install it via &lt;code&gt;pip3 install frida-tools&lt;/code&gt;&lt;br&gt;
+Hands on ADB:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;adb shell
+cd /data/local/tmp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To find frida’s installation location:&lt;br&gt;
+&lt;code&gt;pip3 list -v&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Download latest &lt;strong&gt;frida-server&lt;/strong&gt; for target platform form &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://github.com/frida/frida/releases&#34;
+&gt;https://github.com/frida/frida/releases&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;unxz /path/to/file/frida-server-12.8.10-android-arm64.xz
+adb root
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;rename server file to &lt;strong&gt;frida-server&lt;/strong&gt; for easy use.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;adb push frida-server /data/local/tmp/  
+adb shell chmod 755 /data/local/tmp/frida-server # [x86 version and not arm]  
+adb shell /data/local/tmp/frida-server &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;frida must be added to &lt;em&gt;&lt;strong&gt;PATH variable&lt;/strong&gt;&lt;/em&gt; or &lt;em&gt;&lt;strong&gt;executables&lt;/strong&gt;&lt;/em&gt; should be run from their specific locations.&lt;br&gt;
+An alternate way to run frida-server&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;adb shell
+cd /data/local/tmp/
+./frida-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After running &lt;code&gt;./frida-server&lt;/code&gt; there may not be any output, test it by running &lt;code&gt;frida-ps -Ua&lt;/code&gt; from frida executable location(if &lt;em&gt;PATH&lt;/em&gt; is not set) and you must run it in &lt;em&gt;different terminal&lt;/em&gt;.&lt;br&gt;
+Sample Output:&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;/blog-images/android-certificate-repinning.png&#34;
+  alt=&#34;frida-ps -Ua output&#34;
+  
+/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;adb install /path/to/file.apk&lt;/code&gt;&lt;br&gt;
+Import &lt;em&gt;Burp&amp;rsquo;s Certificate&lt;/em&gt; and rename it to &lt;em&gt;.crt&lt;/em&gt; extension and then push it.&lt;br&gt;
+&lt;code&gt;adb push burp-cert.crt /data/local/tmp/&lt;/code&gt;&lt;br&gt;
+rename the cert to &lt;code&gt;mv burp-cert.crt cert-der.crt&lt;/code&gt; [As frida looks for &lt;em&gt;&lt;strong&gt;cert-der.crt&lt;/strong&gt;&lt;/em&gt; by default]&lt;/p&gt;
+&lt;p&gt;Download the repinning script from &lt;a
+  class=&#34;gblog-markdown__link&#34;
+  href=&#34;https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/&#34;
+&gt;https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/&lt;/a&gt; and save it as &lt;em&gt;&lt;strong&gt;frida-repinning.js&lt;/strong&gt;&lt;/em&gt; and push it via&lt;br&gt;
+&lt;code&gt;adb push /path/to/frida-repinning.js /data/local/tmp/&lt;/code&gt;&lt;br&gt;
+And finally run following:&lt;br&gt;
+&lt;code&gt;frida -U -f com.twitter.android -l C:\adb\frida-repinning.js --no-paus&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Change &lt;em&gt;setTimeout&lt;/em&gt; value to &lt;em&gt;100000&lt;/em&gt; so that, the app and js can load without error.&lt;/p&gt;
+
+            </content>  
+                                <category scheme="https://example.org/authors/illusionist3886" term="illusionist3886" label="illusionist3886" /> 
+        </entry>
+</feed>
