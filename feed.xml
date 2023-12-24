@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <generator uri="https://gohugo.io/" version="0.120.3">Hugo</generator>
     <title>Illusionist&#39;s Web Log</title>
-            <link href="https://example.org/" rel="alternate" type="text/html" title="html" />
-            <link href="https://example.org/feed.xml" rel="self" type="application/atom+xml" title="Atom" />
-    <updated>2023-12-19T21:00:26+06:00</updated>
-    <id>https://example.org/</id>
+            <link href="https://delowar.me/" rel="alternate" type="text/html" title="html" />
+            <link href="https://delowar.me/feed.xml" rel="self" type="application/atom+xml" title="Atom" />
+    <updated>2023-12-19T21:06:35+06:00</updated>
+    <id>https://delowar.me/</id>
         <entry>
             <title>Troubleshooting Android APP Repinning</title>
-            <link href="https://example.org/posts/troubleshooting-android-app-repinning/" rel="alternate" type="text/html"  hreflang="en" />
-            <id>https://example.org/posts/troubleshooting-android-app-repinning/</id>
+            <link href="https://delowar.me/posts/troubleshooting-android-app-repinning/" rel="alternate" type="text/html"  hreflang="en" />
+            <id>https://delowar.me/posts/troubleshooting-android-app-repinning/</id>
                     <author>
                         <name>Delowar Hossain</name>
                     </author>
@@ -50,12 +50,12 @@ Then I tried to install the apk from &lt;code&gt;apk-dl&lt;/code&gt; and it in
 /&gt;&lt;/p&gt;
 
             </content>  
-                                <category scheme="https://example.org/authors/illusionist3886" term="illusionist3886" label="illusionist3886" /> 
+                                <category scheme="https://delowar.me/authors/illusionist3886" term="illusionist3886" label="illusionist3886" /> 
         </entry>
         <entry>
             <title>Starting With Android App Testing</title>
-            <link href="https://example.org/posts/Starting-with-Android-App-Testing/" rel="alternate" type="text/html"  hreflang="en" />
-            <id>https://example.org/posts/Starting-with-Android-App-Testing/</id>
+            <link href="https://delowar.me/posts/Starting-with-Android-App-Testing/" rel="alternate" type="text/html"  hreflang="en" />
+            <id>https://delowar.me/posts/Starting-with-Android-App-Testing/</id>
                     <author>
                         <name>Delowar Hossain</name>
                     </author>
@@ -124,6 +124,6 @@ And finally run following:&lt;br&gt;
 &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Change &lt;em&gt;setTimeout&lt;/em&gt; value to &lt;em&gt;100000&lt;/em&gt; so that, the app and js can load without error.&lt;/p&gt;
 
             </content>  
-                                <category scheme="https://example.org/authors/illusionist3886" term="illusionist3886" label="illusionist3886" /> 
+                                <category scheme="https://delowar.me/authors/illusionist3886" term="illusionist3886" label="illusionist3886" /> 
         </entry>
 </feed>

@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/</loc>
+    <loc>https://delowar.me/</loc>
     <lastmod>2020-02-12T09:07:13+06:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/posts/troubleshooting-android-app-repinning/</loc>
+    <loc>https://delowar.me/posts/troubleshooting-android-app-repinning/</loc>
     <lastmod>2020-02-12T09:07:13+06:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/posts/Starting-with-Android-App-Testing/</loc>
+    <loc>https://delowar.me/posts/Starting-with-Android-App-Testing/</loc>
     <lastmod>2020-02-10T07:56:34+06:00</lastmod>
   </url>
   <url>
-    <loc>https://example.org/projects/</loc>
+    <loc>https://delowar.me/projects/</loc>
   </url>
   <url>
-    <loc>https://example.org/about/</loc>
+    <loc>https://delowar.me/about/</loc>
   </url>
 </urlset>
