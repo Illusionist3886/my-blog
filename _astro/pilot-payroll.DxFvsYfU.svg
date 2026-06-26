@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <g transform="translate(292,92) scale(9)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.28">
+    <path d="M16 10h4a2 2 0 0 1 0 4h-4l-4 7h-3l2 -7h-4l-2 2h-3l2 -4l-2 -4h3l2 2h4l-2 -7h3z"/>
+  </g>
+  <text x="400" y="360" text-anchor="middle" font-family="ui-sans-serif,system-ui,Arial,sans-serif" font-size="22" fill="#ffffff" opacity="0.85">Crystal Air Inc.</text>
+  <text x="400" y="410" text-anchor="middle" font-family="ui-sans-serif,system-ui,Arial,sans-serif" font-weight="700" font-size="44" fill="#ffffff">Pilot Payroll System</text>
+</svg>
