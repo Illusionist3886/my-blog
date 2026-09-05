@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <g transform="translate(292,92) scale(9)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.28">
+    <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/>
+    <path d="M16 3v4M8 3v4M4 11h16M11 15h1v3"/>
+  </g>
+  <text x="400" y="360" text-anchor="middle" font-family="ui-sans-serif,system-ui,Arial,sans-serif" font-size="22" fill="#ffffff" opacity="0.85">Magic Moments Activities</text>
+  <text x="400" y="410" text-anchor="middle" font-family="ui-sans-serif,system-ui,Arial,sans-serif" font-weight="700" font-size="42" fill="#ffffff">Care Home Activities</text>
+</svg>
