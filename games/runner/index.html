@@ -1,0 +1,444 @@
+<!DOCTYPE html><html class="2xl:text-[20px]" dir="ltr" lang="en"><head><meta charset="UTF-8"><meta content="width=device-width,initial-scale=1" name="viewport"><link href="/sitemap-index.xml" rel="sitemap"><link href="/_astro/favicon.CGiRCjPI.ico" rel="shortcut icon"><link href="/_astro/favicon.CkHrj0zY.svg" rel="icon" type="image/svg+xml"><link href="/_astro/favicon.CkHrj0zY.svg" rel="mask-icon" color="#8D46E7"><link href="/_astro/apple-touch-icon.DHIlG7dp.png" rel="apple-touch-icon" sizes="180x180"><style>:root{--aw-font-sans:'Inter Variable';--aw-font-serif:'Inter Variable';--aw-font-heading:'Inter Variable';--aw-color-primary:rgb(1 97 239);--aw-color-secondary:rgb(1 84 207);--aw-color-accent:rgb(109 40 217);--aw-color-text-heading:rgb(0 0 0);--aw-color-text-default:rgb(16 16 16);--aw-color-text-muted:rgb(16 16 16 / 66%);--aw-color-bg-page:rgb(255 255 255);--aw-color-bg-page-dark:rgb(3 6 32)}.dark{--aw-font-sans:'Inter Variable';--aw-font-serif:'Inter Variable';--aw-font-heading:'Inter Variable';--aw-color-primary:rgb(1 97 239);--aw-color-secondary:rgb(1 84 207);--aw-color-accent:rgb(109 40 217);--aw-color-text-heading:rgb(247, 248, 248);--aw-color-text-default:rgb(229 236 246);--aw-color-text-muted:rgb(229 236 246 / 66%);--aw-color-bg-page:rgb(3 6 32)}</style><script>!function(){const e="system";function t(e){"dark"===e?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark");const t=document.querySelectorAll("[data-aw-toggle-color-scheme] > input");t&&t.length&&t.forEach(t=>{t.checked="dark"!==e})}e&&e.endsWith(":only")||(localStorage.theme,0)?t(e.replace(":only","")):"dark"===localStorage.theme||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):t("light")}()</script><title>Temple Bodyrun — Delowar Hossain — Delowar Hossain</title><link href="https://delowar.me/games/runner" rel="canonical"><meta content="A webcam body-controlled endless runner — jump, duck, and step lanes with your own moves." name="description"><meta content="index, follow" name="robots"><meta content="summary_large_image" name="twitter:card"><meta content="@illusionist3886" name="twitter:site"><meta content="@illusionist3886" name="twitter:creator"><script data-id id="ga-init">if(document.getElementById("ga-init").dataset.id){var d=document.getElementById("ga-init").dataset.id;window.dataLayer=window.dataLayer||[],window.gtag=function(){dataLayer.push(arguments)},window.gtag("js",new Date),window.gtag("config",d)}</script><link href="https://images.unsplash.com" rel="preconnect"><meta content="true" name="astro-view-transitions-enabled"><meta content="swap" name="astro-view-transitions-fallback"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CAqDO0tx.js"></script><link href="/_astro/Layout.BuYaxp56.css" rel="stylesheet"><style>body,html{margin:0;height:100%;overflow:hidden;background:#0d1409;color:#e9e4d0;font:14px system-ui,sans-serif}#wrap{position:fixed;inset:0}#wrap canvas.game{display:block;width:100%;height:100%}#hud{position:absolute;left:24px;top:20px;pointer-events:none;text-shadow:0 2px 8px #000d}#dist{font:700 36px system-ui}#coin{font:700 24px system-ui;color:#ffd166}#best,#state{font:15px system-ui;opacity:.85}#cambox{position:absolute;right:24px;top:24px;width:160px;height:120px;border:1px solid #fff3;border-radius:8px;overflow:hidden}#cambox canvas,#cambox video{position:absolute;inset:0;width:160px;height:120px;transform:scaleX(-1)}#over{position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;background:#000a;font:700 46px system-ui;text-align:center}#over small{font:400 18px system-ui;opacity:.85}#over.hide{display:none}#bar{position:absolute;left:0;right:0;bottom:20px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}#bar>*{background:#0009;padding:7px 12px;border-radius:9px;backdrop-filter:blur(4px)}#bar button{font:inherit;border:0;background:#c98a2e;color:#241a08;font-weight:600;cursor:pointer}#msg{opacity:.8}</style></head><body class="antialiased bg-page text-default tracking-tight"><div id="wrap"><div id="hud"><div id="dist">0 m</div><div id="coin">◍ 0</div><div id="best">best 0</div><div id="state"></div></div><div id="cambox"><video id="cam" muted playsinline></video><canvas height="120" id="dots" width="160"></canvas></div><div id="over">loading…<small>models + pose</small></div><div id="bar"><button id="cal">Calibrate (C)</button> <button id="fs">Fullscreen (F)</button> <label>sensitivity <input id="sens" max="2" min="0.4" step="0.1" type="range" value="1"></label> <span id="msg">starting up…</span></div></div><script>!function(){const e="system";if(window.basic_script)return;function t(e){"dark"===e?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")}window.basic_script=!0;const a=function(){e&&e.endsWith(":only")||(localStorage.theme,0)?t(e.replace(":only","")):"dark"===localStorage.theme||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):t("light")};function d(e,t,a){const d="string"==typeof e?document.querySelectorAll(e):e;d&&d.length&&d.forEach(e=>{e.addEventListener(t,t=>a(t,e),!1)})}a();const o=function(){let t=window.scrollY,a=!0;d("#header nav","click",function(){document.querySelector("[data-aw-toggle-menu]")?.classList.remove("expanded"),document.body.classList.remove("overflow-hidden"),document.getElementById("header")?.classList.remove("h-screen"),document.getElementById("header")?.classList.remove("expanded"),document.getElementById("header")?.classList.remove("bg-page"),document.querySelector("#header nav")?.classList.add("hidden"),document.querySelector("#header > div > div:last-child")?.classList.add("hidden")}),d("[data-aw-toggle-menu]","click",function(e,t){t.classList.toggle("expanded"),document.body.classList.toggle("overflow-hidden"),document.getElementById("header")?.classList.toggle("h-screen"),document.getElementById("header")?.classList.toggle("expanded"),document.getElementById("header")?.classList.toggle("bg-page"),document.querySelector("#header nav")?.classList.toggle("hidden"),document.querySelector("#header > div > div:last-child")?.classList.toggle("hidden")}),d("[data-aw-toggle-color-scheme]","click",function(){e.endsWith(":only")||(Observer.removeAnimationDelay(),document.documentElement.classList.toggle("dark"),localStorage.theme=document.documentElement.classList.contains("dark")?"dark":"light")}),d("[data-aw-social-share]","click",function(e,t){const a=t.getAttribute("data-aw-social-share"),d=encodeURIComponent(t.getAttribute("data-aw-url")),o=encodeURIComponent(t.getAttribute("data-aw-text"));let n;switch(a){case"facebook":n=`https://www.facebook.com/sharer.php?u=${d}`;break;case"twitter":n=`https://twitter.com/intent/tweet?url=${d}&text=${o}`;break;case"linkedin":n=`https://www.linkedin.com/shareArticle?mini=true&url=${d}&title=${o}`;break;case"whatsapp":n=`https://wa.me/?text=${o}%20${d}`;break;case"mail":n=`mailto:?subject=%22${o}%22&body=${o}%20${d}`;break;default:return}const c=document.createElement("a");c.target="_blank",c.href=n,c.click()});function o(){const e=document.querySelector("#header[data-aw-sticky-header]");e&&(t>60&&!e.classList.contains("scroll")?e.classList.add("scroll"):t<=60&&e.classList.contains("scroll")&&e.classList.remove("scroll"),a=!1)}window.matchMedia("(max-width: 767px)").addEventListener("change",function(){document.querySelector("[data-aw-toggle-menu]")?.classList.remove("expanded"),document.body.classList.remove("overflow-hidden"),document.getElementById("header")?.classList.remove("h-screen"),document.getElementById("header")?.classList.remove("expanded"),document.getElementById("header")?.classList.remove("bg-page"),document.querySelector("#header nav")?.classList.add("hidden"),document.querySelector("#header > div > div:last-child")?.classList.add("hidden")}),o(),d([document],"scroll",function(){t=window.scrollY,a||(window.requestAnimationFrame(()=>{o()}),a=!0)})},n=function(){document.documentElement.classList.add("motion-safe:scroll-smooth");const e=document.querySelector("[data-aw-toggle-menu]");e&&e.classList.remove("expanded"),document.body.classList.remove("overflow-hidden"),document.getElementById("header")?.classList.remove("h-screen"),document.getElementById("header")?.classList.remove("expanded"),document.querySelector("#header nav")?.classList.add("hidden")};window.onload=o,window.onpageshow=n,document.addEventListener("astro:after-swap",()=>{a(),o(),n()})}()</script><script>const Observer={observer:null,delayBetweenAnimations:100,animationCounter:0,elements:null,start(t){this.observer&&this.observer.disconnect(),this.animationCounter=0;this.elements=Array.from(document.querySelectorAll(['[class*=" intersect:"]','[class*=":intersect:"]','[class^="intersect:"]','[class="intersect"]','[class*=" intersect "]','[class^="intersect "]','[class$=" intersect"]'].join(",")));if(this.elements.forEach(t=>{var e;t.setAttribute("no-intersect",""),t._intersectionThreshold=(e=t).classList.contains("intersect-full")?.99:e.classList.contains("intersect-half")?.5:e.classList.contains("intersect-quarter")?.25:0}),t){const t=window.innerHeight;this.elements.forEach(e=>{const s=e.getBoundingClientRect();s.top<t&&s.bottom>0&&(e.removeAttribute("no-intersect"),e.setAttribute("data-animated","true"),e.style.animationDuration="0s")})}this.observer=new IntersectionObserver(t=>{t.forEach(t=>{requestAnimationFrame(()=>{const e=t.target,s=t.intersectionRatio,n=e._intersectionThreshold;if(e.classList.contains("intersect-no-queue"))t.isIntersecting?(e.removeAttribute("no-intersect"),e.classList.contains("intersect-once")&&this.observer.unobserve(e)):e.setAttribute("no-intersect","");else if(s>=n){if(!e.hasAttribute("data-animated")){e.removeAttribute("no-intersect"),e.setAttribute("data-animated","true"),e.style.animationDuration="";const t=this.animationCounter*this.delayBetweenAnimations;this.animationCounter++,e.style.transitionDelay=`${t}ms`,e.style.animationDelay=`${t}ms`,e.classList.contains("intersect-once")&&this.observer.unobserve(e)}}else e.setAttribute("no-intersect",""),e.removeAttribute("data-animated"),e.style.transitionDelay="",e.style.animationDelay="",e.style.animationDuration="",this.animationCounter=0})})},{threshold:[0,.25,.5,.99]}),this.elements.forEach(t=>{t.hasAttribute("data-animated")||this.observer.observe(t)})},removeAnimationDelay(){this.elements.forEach(t=>{"true"===t.getAttribute("data-animated")&&(t.style.transitionDelay="",t.style.animationDelay="")})}};Observer.start(!1),document.addEventListener("astro:after-swap",()=>{Observer.start(!0)})</script></body></html><script type="importmap">{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}</script><script type="module">import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
+import { PoseLandmarker, FilesetResolver } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14";
+
+const ASSETS = "/games/runner/";
+
+// ---- world ----
+const LANE_W = 1.6, CAM_Y = 2.15, CAM_BACK = 4.2;    // camera rides just over the hero's head
+const PH = 1.4, DUCK_H = 0.7, JUMP_H = 1.5;
+// ponytail: tune the jump as launch speed + gravity, not as a height — airtime is
+// what makes it feel fair. ~54 frames (~0.9s) in the air, apex just over a metre.
+const JUMP_V = 0.085, GRAV = 0.00315, APEX = JUMP_V * JUMP_V / (2 * GRAV);
+const AIRTIME = 2 * JUMP_V / GRAV / 60;              // seconds; the jump clip is retimed to this
+const LOG_H = 0.6, VINE_Y = 1.05, VINE_D = 0.5;
+// ponytail: a slide is a timed move like the jump, not a state you hold. One press
+// buys the whole pass under the branch, so a duck can be early but never too short.
+const SLIDE_F = 45;                                  // frames, ~0.75s
+// ponytail: one speed, held for the whole run — no ramp. Spawn spacing is in distance,
+// not time, so changing this one number stretches the gaps with it and nothing else
+// needs retuning. Units per frame at 60Hz.
+const SPEED = 0.23;                                  // 0.13 x 1.75
+const FAR = 70, HAZE = 0xd9dda0;
+// ponytail: which way the model faces is a coin flip no file inspection settles.
+// Verified in the browser: she faces +Z out of the box, so she needs turning around.
+// Press T if a future model disagrees, then bake the value you end up with in here.
+let HERO_YAW = Math.PI;
+
+// ponytail: thresholds are fractions of your own torso height, so they survive
+// different cameras and body sizes. `sens` is the human-facing tuning knob.
+const CFG = { jump: 0.22, duck: 0.30, sens: 1 };
+
+/** pure: landmarks + calibration baseline -> {x, jump, duck} */
+function poseState(lm, base, cfg) {
+  if (!lm || !base) return null;
+  const hipY = (lm[23].y + lm[24].y) / 2;
+  const shY  = (lm[11].y + lm[12].y) / 2;
+  const hipX = (lm[23].x + lm[24].x) / 2;
+  const t = base.torso * cfg.sens;
+  return {
+    x: 1 - hipX,                                     // mirror: step right -> move right
+    jump: hipY < base.hip - t * cfg.jump,
+    duck: shY  > base.sh  + t * cfg.duck,
+  };
+}
+
+/** pure: body x (0..1) -> lane (-1, 0, 1), with hysteresis so a border does not flicker */
+function laneFor(x, cur) {
+  const m = 0.06;                                    // deadband you must cross to leave a lane
+  const lo = cur === -1 ? 0.36 + m : 0.36;
+  const hi = cur ===  1 ? 0.64 - m : 0.64;
+  return x < lo ? -1 : x > hi ? 1 : 0;
+}
+
+/** pure: does the player box overlap this object in lane + height? */
+function collides(p, o) {
+  return p.lane === o.lane && p.y < o.y + o.h && p.y + p.h > o.y;
+}
+
+// ---------- self-check: open /games/runner#test ----------
+if (location.hash === "#test") {
+  const mk = (hip, sh, hx = .5) => { const l = []; l[11] = l[12] = { x: hx, y: sh }; l[23] = l[24] = { x: hx, y: hip }; return l; };
+  const base = { hip: .6, sh: .3, torso: .3 }, c = { ...CFG };
+
+  const idle = poseState(mk(.6, .3), base, c);
+  console.assert(!idle.jump && !idle.duck, "standing still is neither");
+  console.assert(Math.abs(idle.x - .5) < 1e-9, "centred");
+  console.assert(poseState(mk(.51, .21), base, c).jump, "hips up = jump");
+  console.assert(poseState(mk(.65, .42), base, c).duck, "shoulders down = duck");
+  console.assert(!poseState(mk(.58, .33), base, c).jump, "small wobble is not a jump");
+  console.assert(poseState(mk(.6, .3, .8), base, c).x < .3, "camera x is mirrored");
+  console.assert(poseState(null, base, c) === null, "no landmarks = no state");
+
+  console.assert(laneFor(.5, 0) === 0, "centre stays centre");
+  console.assert(laneFor(.2, 0) === -1 && laneFor(.9, 0) === 1, "edges pick a lane");
+  console.assert(laneFor(.40, -1) === -1, "hysteresis holds the lane you are in");
+  console.assert(laneFor(.50, -1) === 0, "a real step still gets out");
+
+  const stand = { lane: 0, y: 0, h: PH }, duck = { lane: 0, y: 0, h: DUCK_H }, air = { lane: 0, y: APEX, h: PH };
+  const log = { lane: 0, y: 0, h: LOG_H }, vine = { lane: 0, y: VINE_Y, h: 1.4, d: VINE_D }, block = { lane: 0, y: 0, h: 2.6 };
+  console.assert(collides(stand, log) && !collides(air, log), "jump clears a fallen log");
+  console.assert(APEX > LOG_H + 0.35, "and clears it with room to spare, not frame-perfectly");
+  console.assert(AIRTIME > 0.75, "airtime is forgiving");
+  console.assert(APEX < JUMP_H, "the arc never hits the ceiling clamp");
+  console.assert(VINE_Y > DUCK_H + 0.15, "ducking passes under the branch with room");
+  console.assert(PH > VINE_Y + 0.2, "but standing tall still catches it");
+  console.assert(collides(stand, vine) && !collides(duck, vine), "duck clears a hanging branch");
+  console.assert(SLIDE_F * SPEED > VINE_D + 1.0, "one slide outlasts the branch's whole collision window");
+  console.assert(collides(stand, block) && collides(air, block) && collides(duck, block), "a tree in the lane needs a lane change");
+  console.assert(!collides({ ...stand, lane: 1 }, block), "another lane is safe");
+
+  console.assert(CAM_Y > PH && CAM_Y - PH < 1, "camera rides just over the hero's head");
+  console.assert(AIRTIME * 60 * SPEED > 0.8 + 1.0, "one jump carries her clear over a log's whole window");
+  // the duck tilt has to actually shrink her to the ducking hitbox, or the visual lies
+  console.assert(Math.abs(PH * Math.cos(1.1) - DUCK_H) < 0.12, "tipping 1.1 rad forward really is duck height");
+
+  document.getElementById("over").textContent = "self-check done — failures (if any) are in the console";
+} else {
+
+const $ = id => document.getElementById(id);
+const over = $("over"), video = $("cam"), msg = $("msg"), dots = $("dots"), dctx = dots.getContext("2d");
+$("sens").oninput = e => CFG.sens = +e.target.value;
+
+// ---------- scene ----------
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.domElement.className = "game";
+$("wrap").prepend(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(HAZE, 26, FAR + 15);
+{ // sky: a two-stop gradient is all the background this ever needs
+  const c = document.createElement("canvas"); c.width = 2; c.height = 256;
+  const x = c.getContext("2d"), gr = x.createLinearGradient(0, 0, 0, 256);
+  gr.addColorStop(0, "#4d7a34"); gr.addColorStop(0.55, "#9fb96a"); gr.addColorStop(1, "#d9dda0");
+  x.fillStyle = gr; x.fillRect(0, 0, 2, 256);
+  scene.background = new THREE.CanvasTexture(c);
+}
+
+const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 220);
+
+// ponytail: the canvas is the window. One resize handler, called once at startup so
+// there is no separate first-layout path to get wrong.
+const resize = () => {
+  renderer.setSize(innerWidth, innerHeight);
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+};
+addEventListener("resize", resize);
+resize();
+
+camera.position.set(0, CAM_Y, CAM_BACK);
+camera.lookAt(0, 1.05, -10);
+
+scene.add(new THREE.HemisphereLight(0xe4efc4, 0x27401f, 1.5));
+const sun = new THREE.DirectionalLight(0xfff3cf, 1.8);
+sun.position.set(-7, 14, 5);
+scene.add(sun);
+
+// ---------- model normalising ----------
+// ponytail: these files arrive in two different up-axes and four different scales.
+// Normalising from the bounding box at load beats hand-tuning magic numbers per file.
+function fit(obj, { rotX = 0, width, height } = {}) {
+  const holder = new THREE.Group();
+  obj.rotation.x = rotX;
+  holder.add(obj);
+  holder.updateMatrixWorld(true);
+  const s = new THREE.Box3().setFromObject(holder).getSize(new THREE.Vector3());
+  const kxz = width ? width / Math.max(s.x, s.z) : height / s.y;
+  const ky = height ? height / s.y : kxz;            // both given = squash to fit the hitbox
+  obj.scale.multiply(new THREE.Vector3(kxz, ky, kxz));
+  holder.updateMatrixWorld(true);
+  const b = new THREE.Box3().setFromObject(holder), c = b.getCenter(new THREE.Vector3());
+  obj.position.x -= c.x; obj.position.z -= c.z;      // centre it on its lane
+  obj.position.y -= b.min.y;                         // and stand it on the ground
+  return holder;
+}
+
+const loader = new GLTFLoader();
+// coconut-tree.glb requires KHR_draco_mesh_compression; the others do not, but one
+// decoder covers the lot and is lazily fetched only when a Draco mesh shows up.
+loader.setDRACOLoader(new DRACOLoader().setDecoderPath("https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/"));
+const load = url => new Promise((ok, err) => loader.load(url, ok, undefined, err));
+const [girl, logG, palmG, bananaG, grassG] = await Promise.all(
+  ["running.glb", "wood-log-obtacle.glb", "coconut-tree.glb", "banana-tree.glb", "grass.glb"].map(f => load(ASSETS + f)));
+
+// ponytail: every one of these is already Y-up once the exporter's node transforms
+// are applied — checked in a viewer, not inferred from the raw accessor bounds, which
+// are pre-transform and say Z-up. `rotX` stays as the escape hatch for the next asset.
+const logProto    = fit(logG.scene,              { width: 1.65, height: LOG_H * 1.1 });
+// ponytail: the palm asset is a three-tree clump 8.4 wide — it would claim lanes it
+// does not own. A banana plant is naturally tall and narrow, so it plugs one lane honestly.
+const blockProto  = fit(bananaG.scene.clone(true), { width: 1.6, height: 2.9 });
+const palmProto   = fit(palmG.scene,             { height: 6.0 });
+const bananaProto = fit(bananaG.scene,           { height: 3.2 });
+const grassProto  = fit(grassG.scene,            { height: 1.1 });
+
+// ---------- hero ----------
+const hero = fit(girl.scene, { height: PH });
+hero.rotation.y = HERO_YAW;
+const heroGroup = new THREE.Group();
+heroGroup.add(hero);
+scene.add(heroGroup);
+
+const mixer = new THREE.AnimationMixer(girl.scene);
+const clip = n => THREE.AnimationClip.findByName(girl.animations, n);
+const act = (n, opts = {}) => Object.assign(mixer.clipAction(clip(n)), opts);
+const A = {
+  run:   act("Girl@Run_Forward"),
+  jump:  act("Girl@Jump", { loop: THREE.LoopOnce, clampWhenFinished: true, timeScale: clip("Girl@Jump").duration / AIRTIME }),
+  crash: act("Girl@Dying_Forward", { loop: THREE.LoopOnce, clampWhenFinished: true, timeScale: 1.6 }),
+};
+A.run.timeScale = SPEED / 0.2;                         // keep the footfalls planted at this speed
+A.run.play();
+let current = A.run;
+const playOnce = a => { a.reset().play(); current.crossFadeTo(a, 0.12, false); current = a; };
+const backToRun = () => { if (current !== A.run) { A.run.reset().play(); current.crossFadeTo(A.run, 0.15, false); current = A.run; } };
+
+// ponytail: every bone carries a baked translation track, so the run clip walks her
+// off down the track. Pin the hips in X/Z and keep Y — the world scrolls instead.
+const hips = girl.scene.getObjectByName("Character1_Hips_01");
+const hipsHome = hips ? hips.position.clone() : null;
+
+const shadow = new THREE.Mesh(
+  new THREE.CircleGeometry(0.42, 20),
+  new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.32, depthWrite: false }));
+shadow.rotation.x = -Math.PI / 2;
+scene.add(shadow);
+
+// ---------- track ----------
+const PATH_W = LANE_W * 3 + 0.9, SLAB_D = 1.9, SLABS = 34, TRACK_LEN = SLABS * SLAB_D;
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(200, 300), new THREE.MeshStandardMaterial({ color: 0x2d4a22 }));
+floor.rotation.x = -Math.PI / 2; floor.position.z = -100; scene.add(floor);
+
+const slabGeo = new THREE.BoxGeometry(PATH_W, 0.16, SLAB_D - 0.12);
+const slabMat = [0xa38f66, 0x94815a].map(c => new THREE.MeshStandardMaterial({ color: c }));
+const slabs = [];
+for (let i = 0; i < SLABS; i++) {
+  const m = new THREE.Mesh(slabGeo, slabMat[i % 2]);
+  m.position.set(0, 0.08, -i * SLAB_D);
+  scene.add(m); slabs.push(m);
+}
+for (const s of [-1, 1]) {                             // moss creeping over the path edge
+  const e = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.2, 320), new THREE.MeshStandardMaterial({ color: 0x46682c }));
+  e.position.set(s * (PATH_W / 2 + 0.22), 0.1, -110); scene.add(e);
+}
+
+// ponytail: a palm crown is wider than it is tall, so set back from the path by its
+// own height — anything closer swallows the camera as it sweeps past.
+const SCEN_LEN = 84, scenery = [];
+for (let i = 0; i < 30; i++) {
+  const o = [palmProto, bananaProto, grassProto, grassProto][i % 4].clone(true);
+  const near = i % 4 >= 2 ? 0.6 : 5.0;                 // undergrowth hugs the path, trees stand back
+  const side = Math.random() < 0.5 ? 1 : -1;           // random, or every palm lands on the same bank
+  o.position.set(side * (PATH_W / 2 + near + Math.random() * 3.5), 0, -(i / 30) * SCEN_LEN - Math.random() * 3);
+  o.rotation.y = Math.random() * Math.PI * 2;
+  o.scale.multiplyScalar(0.8 + Math.random() * 0.5);
+  scene.add(o); scenery.push(o);
+}
+
+// ---------- obstacle bodies ----------
+const branchProto = new THREE.Group();
+{
+  const wood = new THREE.MeshStandardMaterial({ color: 0x4e3b24 });
+  const leaf = new THREE.MeshStandardMaterial({ color: 0x3c7030 });
+  const bar = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.13, LANE_W * 1.15, 8), wood);
+  bar.rotation.z = Math.PI / 2; bar.position.y = 2.3;
+  branchProto.add(bar);
+  for (const vx of [-0.55, -0.18, 0.2, 0.56]) {
+    const v = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 1.2, 5), leaf);
+    v.position.set(vx, 1.72, 0); branchProto.add(v);
+    const l = new THREE.Mesh(new THREE.SphereGeometry(0.2, 8, 6), leaf);
+    l.position.set(vx, 1.25, 0); l.scale.set(1, 0.5, 0.8); branchProto.add(l);
+  }
+}
+const coinProto = new THREE.Mesh(
+  new THREE.TorusGeometry(0.22, 0.075, 8, 22),
+  new THREE.MeshStandardMaterial({ color: 0xe8a92e, metalness: 0.75, roughness: 0.3, emissive: 0x3a2400 }));
+
+for (const [name, o] of [["log", logProto], ["blocker", blockProto]]) {
+  const s = new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3());
+  // ponytail: an obstacle that lies about its size still kills you. Two lines here beat
+  // the afternoon I just spent finding a log buried under the path.
+  if (s.y < 0.15) console.warn(`${name} body is only ${s.y.toFixed(2)} tall — it will be invisible`);
+  if (s.x > LANE_W * 1.4) console.warn(`${name} body is ${s.x.toFixed(2)} wide — it overhangs lanes it does not block`);
+}
+
+const bodyFor = k => (k === "log" ? logProto : k === "vine" ? branchProto : k === "block" ? blockProto : coinProto).clone(true);
+
+// ---------- game state ----------
+let baseline = null, calSamples = null, landmarks = null;
+const player = { lane: 0, wx: 0, y: 0, h: PH, vy: 0 };
+let things = [], dist = 0, coins = 0, best = 0, dead = false, nextZ = 40, duckAmt = 0, slideT = 0;
+
+function reset() {
+  for (const o of things) scene.remove(o.mesh);
+  things = []; dist = 0; coins = 0; dead = false; nextZ = 40;
+  player.lane = 0; player.y = 0; player.vy = 0; player.h = PH; slideT = 0;
+  over.classList.add("hide");
+  backToRun();
+}
+const calibrate = () => { calSamples = []; msg.textContent = "hold a normal standing pose…"; };
+const fullscreen = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+$("fs").onclick = fullscreen;
+$("cal").onclick = calibrate;
+
+const jump = () => { player.vy = JUMP_V; slideT = 0; playOnce(A.jump); };
+
+// ponytail: keyboard fallback — lets you test sitting down, and covers a lost pose
+addEventListener("keydown", e => {
+  if (e.key === "c") calibrate();
+  if (e.key === "f") fullscreen();
+  if (e.key === "r" && dead) reset();
+  if (e.key === "t") hero.rotation.y = (HERO_YAW += Math.PI);     // facing knob, see HERO_YAW
+  if (e.key === "ArrowLeft")  player.lane = Math.max(-1, player.lane - 1);
+  if (e.key === "ArrowRight") player.lane = Math.min(1, player.lane + 1);
+  if (e.key === "ArrowDown")  slideT = SLIDE_F;
+  if (e.key === " " && player.y === 0) jump();
+  if ([" ", "ArrowLeft", "ArrowRight", "ArrowDown"].includes(e.key)) e.preventDefault();
+});
+
+function add(o) {
+  o.mesh = bodyFor(o.k);
+  if (o.k === "coin")  o.mesh.position.y = 0.7;              // sits at chest height, reachable ducked
+  if (o.k === "block") o.mesh.rotation.y = Math.random() * 6.28;
+  o.mesh.position.x = o.lane * LANE_W;
+  o.mesh.position.z = -o.z;
+  scene.add(o.mesh);
+  things.push(o);
+}
+
+function spawnWave(z) {
+  const lanes = [-1, 0, 1].sort(() => Math.random() - 0.5);
+  const safe = lanes.pop();                            // ponytail: always leave one lane clear
+  for (const lane of lanes) {
+    if (Math.random() < 0.35) continue;
+    const r = Math.random();
+    add(r < 0.34 ? { k: "log",   lane, z, y: 0,      h: LOG_H, d: 0.8 }
+      : r < 0.67 ? { k: "vine",  lane, z, y: VINE_Y, h: 1.4,   d: VINE_D }
+                 : { k: "block", lane, z, y: 0,      h: 2.6,   d: 1.3 });
+  }
+  for (let i = 0; i < 4; i++)
+    if (Math.random() < 0.7) add({ k: "coin", lane: safe, z: z + i * 1.7, y: 0.45, h: 0.6, d: 0.2 });
+}
+
+const WHY = { log: "a fallen log — jump it", vine: "a hanging branch — slide under it", block: "a tree in the lane — go around it" };
+function showCrash(o) {
+  over.innerHTML = `caught<small>${WHY[o.k]}</small><small>${Math.floor(dist)} m + ${coins} coins — press R</small>`;
+  over.classList.remove("hide");
+}
+
+function step(st, k) {
+  if (dead) return;
+  dist += SPEED * k;
+
+  if (st) player.lane = laneFor(st.x, player.lane);
+  player.wx += (player.lane - player.wx) * 0.22 * k;
+
+  if (st?.duck) slideT = SLIDE_F;                       // holding the pose keeps it topped up
+  if (slideT > 0) slideT -= k;
+  const ducking = slideT > 0;
+  player.h = ducking ? DUCK_H : PH;                     // hitbox follows the input with no lag
+  duckAmt += ((ducking ? 1 : 0) - duckAmt) * 0.35 * k;  // the lerp is the look, not the hitbox
+
+  if (st?.jump && player.y === 0) jump();               // a pose jump kicks off a real arc
+  player.vy -= GRAV * k;
+  player.y = Math.max(0, player.y + player.vy * k);
+  if (player.y === 0) { if (player.vy < 0) backToRun(); player.vy = 0; }
+  if (player.y > JUMP_H) { player.y = JUMP_H; player.vy = 0; }
+
+  for (const o of things) { o.z -= SPEED * k; o.mesh.position.z = -o.z; }
+  while (nextZ < dist) { spawnWave(FAR + 22); nextZ += 22 + Math.random() * 14; }
+
+  const hitbox = { lane: player.lane, y: player.y, h: player.h };
+  for (const o of things) {
+    if (o.z > 0.5 || o.z + o.d < -0.5) continue;
+    if (!collides(hitbox, o)) continue;
+    if (o.k === "coin") { o.z = -99; coins++; }
+    else { dead = true; playOnce(A.crash); best = Math.max(best, Math.floor(dist) + coins * 10); showCrash(o); }
+  }
+  things = things.filter(o => { const keep = o.z + o.d > -9; if (!keep) scene.remove(o.mesh); return keep; });
+}
+
+function render(k, dt) {
+  heroGroup.position.set(player.wx * LANE_W, player.y, 0);
+  heroGroup.rotation.x = -1.1 * duckAmt;                // tipping forward IS the duck height
+  shadow.position.set(heroGroup.position.x, 0.18, 0);
+  shadow.scale.setScalar(1 - Math.min(player.y / JUMP_H, 1) * 0.45);
+
+  const flow = dead ? 0 : SPEED * k;                    // the world stops when she does
+  for (const s of slabs)   { s.position.z += flow; if (s.position.z > SLAB_D) s.position.z -= TRACK_LEN; }
+  for (const o of scenery) { o.position.z += flow; if (o.position.z > CAM_BACK + 2) o.position.z -= SCEN_LEN; }
+  for (const o of things)  if (o.k === "coin") o.mesh.rotation.y += 0.09 * k;
+
+  mixer.update(dt);
+  if (hipsHome) { hips.position.x = hipsHome.x; hips.position.z = hipsHome.z; }
+  renderer.render(scene, camera);
+
+  $("dist").textContent = `${Math.floor(dist)} m`;
+  $("coin").textContent = `◍ ${coins}`;
+  $("best").textContent = `best ${best}`;
+}
+
+// ---------- run now, wire the camera up behind it ----------
+// ponytail: the world is ready, so start drawing it. Pose is an input, not a
+// prerequisite — if the camera never arrives the keyboard still plays the game.
+let pose = null;
+const clock = new THREE.Clock();
+let lastTs = -1;
+function loop(now) {
+  requestAnimationFrame(loop);
+  const dt = Math.min(clock.getDelta(), 0.05), k = dt * 60;    // physics stays tuned at 60Hz
+
+  if (pose && video.currentTime !== lastTs) {
+    lastTs = video.currentTime;
+    landmarks = pose.detectForVideo(video, now).landmarks[0] ?? null;
+    dctx.clearRect(0, 0, 160, 120);
+    if (landmarks) { dctx.fillStyle = "#9ade7a"; for (const i of [11, 12, 23, 24]) dctx.fillRect(landmarks[i].x * 160 - 3, landmarks[i].y * 120 - 3, 6, 6); }
+  }
+  if (landmarks && calSamples) {
+    const hip = (landmarks[23].y + landmarks[24].y) / 2, sh = (landmarks[11].y + landmarks[12].y) / 2;
+    calSamples.push({ hip, sh });
+    if (calSamples.length >= 30) {
+      const avg = key => calSamples.reduce((s, v) => s + v[key], 0) / calSamples.length;
+      baseline = { hip: avg("hip"), sh: avg("sh"), torso: Math.max(0.05, avg("hip") - avg("sh")) };
+      calSamples = null;
+      msg.textContent = "go — step left/right, jump, duck";
+    }
+  }
+
+  const st = poseState(landmarks, baseline, CFG);
+  $("state").textContent = (baseline ? `pose:${st?.jump ? " JUMP" : ""}${st?.duck ? " DUCK" : ""}`
+                          : pose ? "press C and stand normally" : "keyboard: ← → space ↓")
+                         + (slideT > 0 ? "  ▸ SLIDING" : "") + (player.y > 0 ? "  ▸ AIRBORNE" : "");
+  step(st, k);
+  render(k, dt);
+}
+over.classList.add("hide");
+requestAnimationFrame(loop);
+
+msg.textContent = "loading pose model…";
+try {
+  const vision = await FilesetResolver.forVisionTasks("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm");
+  const p = await PoseLandmarker.createFromOptions(vision, {
+    baseOptions: {
+      modelAssetPath: "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task",
+      delegate: "GPU",
+    },
+    runningMode: "VIDEO",
+    numPoses: 1,
+  });
+  video.srcObject = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } });
+  await video.play();
+  pose = p;
+  calibrate();
+} catch (e) {
+  msg.textContent = "no camera — keyboard only (← → space ↓)";
+  console.warn("pose input unavailable:", e);
+}
+
+}</script>
