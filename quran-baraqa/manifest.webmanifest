@@ -1,0 +1,16 @@
+{
+  "id": "/quran-baraqa",
+  "name": "Quran Baraqa",
+  "short_name": "Quran Baraqa",
+  "description": "Loop your memorised surahs or a new passage with Mahmoud Khalil Al-Husary recitation.",
+  "start_url": "/quran-baraqa",
+  "scope": "/quran-baraqa",
+  "display": "standalone",
+  "background_color": "#0b1613",
+  "theme_color": "#0b1613",
+  "icons": [
+    { "src": "/quran-baraqa/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/quran-baraqa/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/quran-baraqa/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
