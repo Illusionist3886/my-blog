@@ -1,2 +1,10 @@
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Quran Baraqa: cross-origin isolation enables multi-threaded on-device recognition
+/quran-baraqa
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: credentialless
+/quran-baraqa/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: credentialless
